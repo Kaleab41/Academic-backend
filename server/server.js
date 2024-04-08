@@ -33,6 +33,9 @@ app.use(helmet());
 
 app.use(bodyParses.urlencoded({ extended: true }));
 app.use(bodyParses.json());
+app.use("/sample", (req, res) => {
+  res.send("This is the sample route!");
+});
 
 app.use("/teacher", require("./router/teacher.router"));
 app.use("/admin", require("./router/admin.router"));
